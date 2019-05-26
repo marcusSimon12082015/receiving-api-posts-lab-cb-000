@@ -28,10 +28,10 @@ $(function(){
         var posting = $.post('/products',values);
         posting.done(function(data){
           debugger;
-          $(".productName") = data["name"];
-          $(".productDescription") = data["description"];
-          $(".productPrice") = data["price"];
-          $(".productInventory") = data["inventory"];
+          $(".productName").text(data["name"]);
+          $(".productDescription").text(data["description"]);
+          $(".productPrice").text(data["price"]);
+          $(".productInventory").text(data["inventory"]);
         });
     });
 });
