@@ -1870,3 +1870,15 @@ Processing by ProductsController#new as HTML
 Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.0ms)
 
 
+Started POST "/products" for 89.212.10.198 at 2019-05-26 08:38:07 +0000
+Cannot render console from 89.212.10.198! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"etnL4dehj4Zg4NLwG79FCITGesU3i5MCzk4Zvq+pCEIQG6D0/um2VMld1HsanOliOl47dLGfEqqJGrEC+5C5TQ==", "product"=>{"name"=>"kolo", "price"=>"20", "description"=>"gremo", "inventory"=>"8"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "created_at", "updated_at", "inventory", "description") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "kolo"], ["price", 20], ["created_at", "2019-05-26 08:38:07.193334"], ["updated_at", "2019-05-26 08:38:07.193334"], ["inventory", 8], ["description", "gremo"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers]   [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?[0m  [["product_id", 31]]
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (2.36ms)
+Completed 201 Created in 9ms (Views: 2.9ms | ActiveRecord: 3.1ms)
+
+
