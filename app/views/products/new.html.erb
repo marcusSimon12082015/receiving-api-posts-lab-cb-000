@@ -27,7 +27,6 @@ $(function(){
         var values = $(this).serialize();
         var posting = $.post('/products',values);
         posting.done(function(data){
-          debugger;
           $(".productName").text(data["name"]);
           $(".productDescription").text(data["description"]);
           $(".productPrice").text(data["price"]);
